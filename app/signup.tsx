@@ -30,6 +30,9 @@ export default function Login() {
   if(signupresult.success){
     router.push('/dashboard');
   }
+  else{
+    setErrormsg(signupresult.msg || 'Signup failed');
+  }
 };
   return (
     <View style={{width:Width,height:Height,backgroundColor:"white",paddingTop:statusBarHeight}}>

@@ -25,6 +25,12 @@ export default function Login() {
   }
   setErrormsg('');
   const loginResult = await login(email.toLowerCase(), password);
+  if(loginResult.success){
+    router.push('/dashboard');
+  }
+  else{
+    setErrormsg(loginResult.msg || 'Login failed');
+  }
   console.log(loginResult,'logres');
 };
   return (
